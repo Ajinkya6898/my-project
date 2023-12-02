@@ -18,8 +18,8 @@ const AppLayout = () => {
           </div>
         </div>
         <main></main>
-        <Footer />
       </div>
+      <Footer />
     </>
   );
 };
