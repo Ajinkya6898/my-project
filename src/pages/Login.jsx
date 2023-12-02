@@ -1,24 +1,44 @@
-import React from "react";
-import { HiOutlineUser } from "react-icons/hi2";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import useUserStore from "../store/userstore";
 
 const Login = () => {
   const navigate = useNavigate();
+  const login = useUserStore((state) => state.login);
+
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    login(username, password);
+    navigate("/home");
+  };
+
+  const handleChange = (e) => {
+    setUsername(e.target.value);
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
 
   return (
     <div className="container text-center">
       <div className="card mt-5 m-auto w-25 px-3 pb-3">
         <h3 className="my-3">Welcome back</h3>
-        <form onSubmit={() => navigate("/home")}>
+        <form onSubmit={handleSubmit}>
           <input
             type="text"
-            class="form-control my-2"
+            className="form-control my-2"
             placeholder="Enter Username Here"
+            onChange={handleChange}
           />
           <input
             type="password"
-            class="form-control my-2"
+            className="form-control my-2"
             placeholder="Enter Password Here"
+            onChange={handlePasswordChange}
           />
           <div className="text-start">
             <button className="btn btn-link btn-sm text-start text-decoration-none mb-2">

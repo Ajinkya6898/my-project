@@ -2,9 +2,22 @@ import { create } from "zustand";
 
 const useUserStore = create((set, get) => ({
   loggedIn: false,
-  fullName: "Ajinkya Joshi",
-  emailId: "ajinkya0608@gmail.com",
-  mobileNo: 8329746598,
+  username: "",
+  password: "",
+
+  login: (username, password) =>
+    set(() => ({
+      loggedIn: true,
+      username: username,
+      password: password,
+    })),
+
+  logout: () =>
+    set(() => ({
+      loggedIn: false,
+      username: "",
+      password: "",
+    })),
 }));
 
 export default useUserStore;

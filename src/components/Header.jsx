@@ -6,7 +6,14 @@ import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const loginStatus = useUserStore((state) => state.loggedIn);
-  const userName = useUserStore((state) => state.fullName);
+  const userName = useUserStore((state) => state.username);
+  const password = useUserStore((state) => state.password);
+  const signout = useUserStore((state) => state.logout);
+
+  const handleLogout = () => {
+    signout();
+    navigate("/login");
+  };
 
   const navigate = useNavigate();
   return (
@@ -17,7 +24,10 @@ const Header = () => {
             <HiOutlineUser className="mx-2 mb-1" />
             {userName}
           </h5>
-          <button className="btn btn-outline-dark btn-sm">
+          <button
+            className="btn btn-outline-dark btn-sm"
+            onClick={handleLogout}
+          >
             {" "}
             <HiOutlineArrowRightOnRectangle className="mb-1" /> Logout
           </button>
