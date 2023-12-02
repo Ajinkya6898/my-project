@@ -7,9 +7,9 @@ import { Outlet } from "react-router-dom";
 const AppLayout = () => {
   return (
     <>
-      <div className="container">
+      <Header />
+      <div className="container pt-4">
         <div className="row">
-          <Header />
           <div className="col-3">
             <Sidebar />
           </div>
