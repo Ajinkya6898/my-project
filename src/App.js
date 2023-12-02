@@ -1,16 +1,17 @@
 import React from "react";
-import AppLayout from "./components/AppLayout";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import AppLayout from "./components/AppLayout";
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import Product from "./pages/Product";
 import Payment from "./pages/Payment";
 import Cart from "./pages/Cart";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 
 const App = () => {
   return (
     <>
-      {/* <AppLayout /> */}
       <BrowserRouter>
         <Routes>
           <Route element={<AppLayout />}>
@@ -20,6 +21,8 @@ const App = () => {
             <Route path="/payment" element={<Payment />} />
             <Route path="/contact" element={<Contact />} />
           </Route>
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
         </Routes>
       </BrowserRouter>
     </>

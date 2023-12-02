@@ -1,15 +1,47 @@
 import React from "react";
-import { HiOutlineArrowRightOnRectangle } from "react-icons/hi2";
-import { HiOutlineMoon } from "react-icons/hi2";
+import useUserStore from "../store/userstore";
 import { HiOutlineUser } from "react-icons/hi2";
+import { HiOutlineArrowRightOnRectangle } from "react-icons/hi2";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const loginStatus = useUserStore((state) => state.loggedIn);
+  const userName = useUserStore((state) => state.fullName);
+
+  const navigate = useNavigate();
   return (
     <header className="bg-light navbar navbar-expand">
-      <div className="container d-flex justify-content-end">
-        <button className="btn btn-outline-dark mx-5">Login In</button>
-        <button className="btn btn-dark">Sign Up</button>
-      </div>
+      {loginStatus ? (
+        <div className="container px-4 d-flex align-items-center justify-content-end">
+          <h5 className="px-4 my-0">
+            <HiOutlineUser className="mx-2 mb-1" />
+            {userName}
+          </h5>
+          <button className="btn btn-outline-dark btn-sm">
+            {" "}
+            <HiOutlineArrowRightOnRectangle className="mb-1" /> Logout
+          </button>
+        </div>
+      ) : (
+        <div className="container d-flex justify-content-end">
+          <button
+            className="btn btn-outline-dark mx-5"
+            onClick={() => {
+              navigate("/login");
+            }}
+          >
+            Login In
+          </button>
+          <button
+            className="btn btn-dark"
+            onClick={() => {
+              navigate("/signup");
+            }}
+          >
+            Sign Up
+          </button>
+        </div>
+      )}
     </header>
   );
 };
