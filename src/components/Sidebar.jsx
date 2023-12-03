@@ -37,11 +37,7 @@ const Sidebar = () => {
           </NavLink>
         </li>
 
-        <li className="list-group">
-          <NavLink className="list-group-item" to={"/contact"}>
-            <HiOutlinePaperAirplane className="mx-2 mb-1" /> Contact
-          </NavLink>
-        </li>
+        
       </ul>
     </aside>
   );

@@ -12,7 +12,7 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     login(username, password);
-    navigate("/home");
+    navigate("/");
   };
 
   const handleChange = (e) => {
