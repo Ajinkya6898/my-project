@@ -12,7 +12,7 @@ const Sidebar = () => {
     <aside>
       <ul>
         <li className="list-group">
-          <NavLink className="list-group-item" to={"/home"}>
+          <NavLink className="list-group-item" to={"/"}>
             <HiOutlineHome className="mx-2 mb-1" /> Home
           </NavLink>
         </li>
@@ -36,8 +36,6 @@ const Sidebar = () => {
             <HiOutlineCreditCard className="mx-2 mb-1" /> Payment
           </NavLink>
         </li>
-
-        
       </ul>
     </aside>
   );
