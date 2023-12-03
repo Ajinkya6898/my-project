@@ -23,6 +23,10 @@ const Login = () => {
     setPassword(e.target.value);
   };
 
+  const handleForgotpass = () => {
+    navigate("/forgotpassword");
+  };
+
   return (
     <div className="container text-center">
       <div className="card mt-5 m-auto w-25 px-3 pb-3">
@@ -41,7 +45,10 @@ const Login = () => {
             onChange={handlePasswordChange}
           />
           <div className="text-start">
-            <button className="btn btn-link btn-sm text-start text-decoration-none mb-2">
+            <button
+              className="btn btn-link btn-sm text-start text-decoration-none mb-2"
+              onClick={handleForgotpass}
+            >
               Forgot Password
             </button>
           </div>

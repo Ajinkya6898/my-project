@@ -7,7 +7,6 @@ import { useNavigate } from "react-router-dom";
 const Header = () => {
   const loginStatus = useUserStore((state) => state.loggedIn);
   const userName = useUserStore((state) => state.username);
-  const password = useUserStore((state) => state.password);
   const signout = useUserStore((state) => state.logout);
 
   const handleLogout = () => {

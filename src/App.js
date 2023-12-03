@@ -8,6 +8,8 @@ import Payment from "./pages/Payment";
 import Cart from "./pages/Cart";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import ForgotPassword from "./pages/ForgotPassword";
+import Wishlist from "./pages/Wishlist";
 
 const App = () => {
   return (
@@ -20,9 +22,11 @@ const App = () => {
             <Route path="/cart" element={<Cart />} />
             <Route path="/payment" element={<Payment />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/wishlist" element={<Wishlist />} />
           </Route>
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/forgotpassword" element={<ForgotPassword />} />
         </Routes>
       </BrowserRouter>
     </>
